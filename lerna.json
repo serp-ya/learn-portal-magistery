@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "packages/learn-portal-backend",
+    "packages/learn-portal-frontend"
+  ],
+  "version": "1.0.0"
+}
