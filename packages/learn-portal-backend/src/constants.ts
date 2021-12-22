@@ -20,3 +20,8 @@ export enum EEmployeeLevels {
     D4 = 'd4', // Lead
     D5 = 'd5', // Chef
 };
+
+export enum EUserGroupCodes {
+    Admin = '1',
+    User = '2',
+};
