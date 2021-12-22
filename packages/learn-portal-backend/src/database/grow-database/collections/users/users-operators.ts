@@ -12,20 +12,18 @@ const populateProgressOptions = {
   ],
 };
 
-export const getUsers = async (userId?: string) => {
-  if (userId) {
-    return await usersModel
-      .findById(userId)
-      .populate(populateProgressOptions);
-  }
-  return await usersModel.find({}).populate(populateProgressOptions);
+export const getUsers = async (userId: string) => {
+  return await usersModel
+    .findById(userId)
+    .populate(populateProgressOptions);
 }
 
 export const createUser = async (
+  userId: string,
   professionId: string,
-  text: string
 ) => {
   const { _id } = await usersModel.create({
+    [EUsersFields.Id]: userId,
     [EUsersFields.CurrentProfession]: professionId,
     [EUsersFields.SelectedProfession]: professionId,
     [EUsersFields.Progresses]: [],

@@ -12,21 +12,26 @@ const populateLectionsOptions = {
   ],
 };
 
-export const getSkills = async (lectionId?: string) => {
-  if (lectionId) {
-    return await skillsModel
-      .findById(lectionId)
-      .populate(populateLectionsOptions);
+export const getSkillById = async (skillId?: string) => {
+  return await skillsModel
+    .findById(skillId)
+    .populate(populateLectionsOptions);
+};
+
+export const getSkills = async (skillId?: string) => {
+  if (skillId) {
+    return await getSkillById(skillId);
   }
   return await skillsModel.find({}).populate(populateLectionsOptions);
 };
 
 export const createSkill = async (req: SkillsModel) => {
-  const { _id } = await skillsModel.create({
+  await skillsModel.create({
+    [ESkillsFieldNames.Id]: req._id,
     [ESkillsFieldNames.Lections]: req.lections,
   });
 
-  return skillsModel.findById(_id).populate(populateLectionsOptions);
+  return skillsModel.findById(req._id).populate(populateLectionsOptions);
 };
 
 export const updateSkill = async (

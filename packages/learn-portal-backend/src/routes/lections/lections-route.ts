@@ -6,16 +6,16 @@ export const lectionsRoute = Router();
 
 lectionsRoute.get<LectionsModel>(ROUTES_BASE, async (_, res) => {
   res.statusCode = 200;
-  res.json({ lections: await getLections() });
+  res.json(await getLections());
 });
 
 lectionsRoute.get(`${ROUTES_BASE}:id`, async (req, res) => {
   const { id } = req.params;
 
   try {
-      const book = await getLections(id);
+      const lection = await getLections(id);
       res.statusCode = 200;
-      res.json(book);
+      res.json(lection);
 
   } catch (error) {
       res.status(EStatusCodes.InternalError);

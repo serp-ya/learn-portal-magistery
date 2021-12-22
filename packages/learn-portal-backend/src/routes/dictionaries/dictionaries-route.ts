@@ -17,7 +17,7 @@ const dictionariesRequests = {
 dictionariesRoute.get(ROUTES_BASE, async (_, res) => {
   res.statusCode = 200;
   res.json({
-    dictionaries: [await getProfessionsDictionary(), await getSkillsDictionary],
+    dictionaries: [await getProfessionsDictionary(), await getSkillsDictionary()],
   });
 });
 

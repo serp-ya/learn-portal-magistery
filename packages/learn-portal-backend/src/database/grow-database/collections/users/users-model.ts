@@ -9,7 +9,10 @@ const usersModelOptions = {
 };
 
 @modelOptions(usersModelOptions)
-export class UserModel {    
+export class UserModel {
+    @prop({ required: true })
+    public [EUsersFields.Id]!: string;
+
     @prop({ required: true })
     public [EUsersFields.CurrentProfession]!: string;
     
