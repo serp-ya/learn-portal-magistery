@@ -2,24 +2,24 @@ export { growDBConnection } from "./grow-database/";
 
 // type TUuid = string;
 
-//! type TGrowLection = {
+//!!! type TGrowLection = {
 //   id: TUuid;
 //   description: string;
 //   video: TUuid;
 // };
 
-//! type TGrowSkill = {
+//!!! type TGrowSkill = {
 //   id: TSkill.id;
 //   lections: TGrowLection.id[];
 // };
 
-// type TGrowProgress = {
+//!!! type TGrowProgress = {
 //   userId: TGrowUser.id;
 //   lectionId: TGrowLection.id;
 //   finished: boolean;
 // };
 
-// type TGrowUser = {
+//!!! type TGrowUser = {
 //   id: TUser.id;
 //   currentProfession: TUser.currentProfession;
 //   selectedProfession: TProfession.id;

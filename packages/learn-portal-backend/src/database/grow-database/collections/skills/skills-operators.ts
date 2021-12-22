@@ -6,7 +6,6 @@ const populateLectionsOptions = {
   model: lectionsModel,
   path: ESkillsFieldNames.Lections,
   select: [
-    // "_id",
     ELectionsFieldNames.Description,
     ELectionsFieldNames.Title,
     ELectionsFieldNames.Video,
