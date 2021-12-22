@@ -12,3 +12,11 @@ export const SESSION_CONFIG = {
     resave: false,
     saveUninitialized: false,
 };
+
+export enum EEmployeeLevels {
+    D1 = 'd1', // Junior
+    D2 = 'd2', // Middle
+    D3 = 'd3', // Senior
+    D4 = 'd4', // Lead
+    D5 = 'd5', // Chef
+};

@@ -1,0 +1,43 @@
+{
+  "name": "professions",
+  "localizedName": "Справочник профессий",
+  "lastUpdateDate": "2021-12-21T23:43:18.900Z",
+  "records": [
+    {
+      "id": "cef77f4f-158b-409e-9af0-a9de615da9db",
+      "name": "Junior Frontend-разработчик",
+      "description": "Начинающий разработчик пользовательских интерфейсов",
+      "level": "d1",
+      "minimumSkills": ["aea694c7-8eef-41b2-b55f-1c0ea293947e", "82336442-65a8-431d-a942-9b24c60abdd3"],
+      "additionalSkills": ["64e48ba5-2420-4abc-ba86-aa7728a994f4"],
+      "depricated": false
+    },
+    {
+      "id": "7170e8ab-61c9-4e51-946f-fe17b753f70c",
+      "name": "Middle Backend-разработчик",
+      "description": "Разработчик серверной части приложений на PHP",
+      "level": "d2",
+      "minimumSkills": ["aea694c7-8eef-41b2-b55f-1c0ea293947e", "82336442-65a8-431d-a942-9b24c60abdd3", "9c769af0-5d53-4d41-b783-f3f79562fbcb"],
+      "additionalSkills": ["2fb4c14f-4068-473b-b541-904aec4ab70f", "64e48ba5-2420-4abc-ba86-aa7728a994f4"],
+      "depricated": false
+    },
+    {
+      "id": "76a59488-7be5-47f0-8fc2-45e5b77fcbd3",
+      "name": "Teamlead",
+      "description": "Лидер команды, сильный веб-разработчик",
+      "level": "d4",
+      "minimumSkills": ["aea694c7-8eef-41b2-b55f-1c0ea293947e", "82336442-65a8-431d-a942-9b24c60abdd3", "9c769af0-5d53-4d41-b783-f3f79562fbcb", "2fb4c14f-4068-473b-b541-904aec4ab70f", "64e48ba5-2420-4abc-ba86-aa7728a994f4"],
+      "additionalSkills": ["b9c199f3-b003-4a07-9828-7c5b2e7b1821", "fbefe1cf-8fb7-46ad-bf54-87e1e9238605"],
+      "depricated": false
+    },
+    {
+      "id": "7b0b6366-5b86-4fb6-87a3-ccc790b76507",
+      "name": "Senior Project Manager",
+      "description": "Старший проектный менеджер, управляет проектом",
+      "level": "d3",
+      "minimumSkills": ["b9c199f3-b003-4a07-9828-7c5b2e7b1821", "fbefe1cf-8fb7-46ad-bf54-87e1e9238605"],
+      "additionalSkills": [],
+      "depricated": false
+    }
+  ]
+}

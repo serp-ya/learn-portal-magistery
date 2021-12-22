@@ -1,0 +1,55 @@
+{
+  "name": "skills",
+  "localizedName": "Справочник навыков",
+  "lastUpdateDate": "2021-12-21T23:43:18.900Z",
+  "records": [
+    {
+      "id": "aea694c7-8eef-41b2-b55f-1c0ea293947e",
+      "name": "HTML",
+      "description": "Язык программирования для создания HTML разметки",
+      "depricated": false
+    },
+    {
+      "id": "82336442-65a8-431d-a942-9b24c60abdd3",
+      "name": "CSS",
+      "description": "Язык программирования для создания таблиц стилей",
+      "depricated": false
+    },
+    {
+      "id": "2fb4c14f-4068-473b-b541-904aec4ab70f",
+      "name": "JavaScript",
+      "description": "Язык программирования для создания скриптов, выполняемых в браузере",
+      "depricated": false
+    },
+    {
+      "id": "9c769af0-5d53-4d41-b783-f3f79562fbcb",
+      "name": "PHP",
+      "description": "Язык программирования для генерации веб-страниц",
+      "depricated": false
+    },
+    {
+      "id": "b9c199f3-b003-4a07-9828-7c5b2e7b1821",
+      "name": "Agile",
+      "description": "Методология подхода к ведению разработки",
+      "depricated": false
+    },
+    {
+      "id": "64e48ba5-2420-4abc-ba86-aa7728a994f4",
+      "name": "Git",
+      "description": "Система контроля версий",
+      "depricated": false
+    },
+    {
+      "id": "fbefe1cf-8fb7-46ad-bf54-87e1e9238605",
+      "name": "Estimation",
+      "description": "Навыки оценки временных затрат",
+      "depricated": false
+    },
+    {
+      "id": "50a8122e-ece3-4996-a1fd-80a19952d4db",
+      "name": "Fortran",
+      "description": "Низкоуровневый язык программирования",
+      "depricated": true
+    }
+  ]
+}
