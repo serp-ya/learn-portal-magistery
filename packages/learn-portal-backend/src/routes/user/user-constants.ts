@@ -1,1 +1,1 @@
-export const USER_ROUTE_NAME = 'user';
+export const USER_ROUTE_NAME = "user";

@@ -1,0 +1,1 @@
+export const PROFESSIONS_DICTIONARY_NAME = 'professions';

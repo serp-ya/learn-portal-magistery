@@ -19,7 +19,7 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
-  fashion-shop:
+  learn-portal:
     build: .
     ports:
       - "5000:5000"

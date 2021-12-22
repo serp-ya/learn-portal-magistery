@@ -1,0 +1,1 @@
+export const LECTIONS_ROUTE_NAME = 'lections';
