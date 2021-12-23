@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { getSkillsDictionary } from "@/database/dictionaries-database";
 import {
-  ESkillsFieldNames,
   getSkillById,
   getSkills,
   createSkill,
@@ -13,22 +12,18 @@ export const skillsRoute = Router();
 skillsRoute.get(ROUTES_BASE, async (_, res) => {
   try {
     const skillsDictionary = await getSkillsDictionary();
-
     for (const skill of skillsDictionary.records) {
       const growSkill = await getSkillById(skill.id);
 
       if (!growSkill) {
-        await createSkill({
-          [ESkillsFieldNames.Id]: skill.id,
-          [ESkillsFieldNames.Lections]: [],
-        });
+        await createSkill(skill.id);
       }
     }
 
-    const skills = await getSkills();
+    const result = await getSkills();
 
     res.statusCode = 200;
-    res.json(skills);
+    res.json(result);
   } catch (error) {
     res.statusCode = 502;
     res.json(JSON.stringify(error));

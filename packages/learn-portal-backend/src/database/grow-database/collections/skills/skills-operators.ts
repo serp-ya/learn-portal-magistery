@@ -1,3 +1,5 @@
+import { DocumentType } from '@typegoose/typegoose';
+import { getSkillsDictionary } from '../../../dictionaries-database/skills-dictionary';
 import { ELectionsFieldNames, lectionsModel } from "../lections";
 import { SkillsModel, skillsModel } from "./skills-model";
 import { ESkillsFieldNames } from "./skills-constants";
@@ -12,26 +14,52 @@ const populateLectionsOptions = {
   ],
 };
 
-export const getSkillById = async (skillId?: string) => {
-  return await skillsModel
-    .findById(skillId)
+const mapSkills = async (skills: DocumentType<SkillsModel>[]) => {
+    const skillsDictionary = await getSkillsDictionary();
+
+    const mappedSkills = skills?.map((skill) => {
+      const skillRecord = skillsDictionary.records.find(
+        ({ id }) => id === skill[ESkillsFieldNames.DictId]
+      );
+      const { _id, dictId, ...skillData } = skill.toObject();
+  
+      return {
+        ...skillRecord,
+        ...skillData,
+      };
+    });
+  
+    return mappedSkills;
+}
+
+export const getSkillById = async (skillId: string) => {
+  const skill = await skillsModel
+    .findOne({ [ESkillsFieldNames.DictId]: skillId })
     .populate(populateLectionsOptions);
+
+    if (!skill) {
+      return skill;
+    }
+
+    const [mappedSkill] = await mapSkills([skill]);
+
+    return mappedSkill;
 };
 
-export const getSkills = async (skillId?: string) => {
-  if (skillId) {
-    return await getSkillById(skillId);
-  }
-  return await skillsModel.find({}).populate(populateLectionsOptions);
+export const getSkills = async () => {
+  const skills = await skillsModel.find({}).populate(populateLectionsOptions);
+  const mappedSkills = mapSkills(skills);
+
+  return mappedSkills;
 };
 
-export const createSkill = async (req: SkillsModel) => {
+export const createSkill = async (dictId: string) => {
   await skillsModel.create({
-    [ESkillsFieldNames.Id]: req._id,
-    [ESkillsFieldNames.Lections]: req.lections,
+    [ESkillsFieldNames.DictId]: dictId,
+    [ESkillsFieldNames.Lections]: [],
   });
 
-  return skillsModel.findById(req._id).populate(populateLectionsOptions);
+  return getSkillById(dictId);
 };
 
 export const updateSkill = async (

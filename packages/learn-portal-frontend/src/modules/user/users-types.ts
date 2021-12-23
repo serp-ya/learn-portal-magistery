@@ -1,5 +1,5 @@
-import { TUser } from '../../utils/grow-api/users';
+import { TUser } from "../../utils/grow-api/users";
 
 export type TUserStore = {
-    currentUser: TUser | null;
+  currentUser: TUser | null;
 };

@@ -1,20 +1,20 @@
-import { SET_USER } from './user-actions';
-import { TUserStore } from './users-types';
+import { SET_USER } from "./user-actions";
+import { TUserStore } from "./users-types";
 
 const INIT_STATE: TUserStore = {
-    currentUser: null,
+  currentUser: null,
 };
 
 export const userReducer = (state = INIT_STATE, action): TUserStore => {
-    switch (action.type) {
-        case SET_USER: {
-            return {
-                ...state,
-                currentUser: action.payload,
-            };
-        }
-        default: {
-            return state;
-        }
+  switch (action.type) {
+    case SET_USER: {
+      return {
+        ...state,
+        currentUser: action.payload,
+      };
     }
+    default: {
+      return state;
+    }
+  }
 };

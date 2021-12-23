@@ -1,1 +1,1 @@
-export const PROFESSIONS_STORE_NAME = 'professions';
+export const PROFESSIONS_STORE_NAME = "professions";

@@ -11,7 +11,7 @@ const skillsModelOptions = {
 @modelOptions(skillsModelOptions)
 export class SkillsModel {
     @prop({ required: true })
-    public [ESkillsFieldNames.Id]!: string;
+    public [ESkillsFieldNames.DictId]!: string;
 
     @prop({ required: true })
     public [ESkillsFieldNames.Lections]!: Ref<LectionsModel>[];

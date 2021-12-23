@@ -1,6 +1,9 @@
-import { TLection } from '../lections';
+import { TLection } from "../lections";
 
 export type TSkill = {
-    lections: TLection[],
-    _id: "fbefe1cf-8fb7-46ad-bf54-87e1e9238605",
+  id: string;
+  name: string;
+  description: string;
+  depricated: boolean;
+  lections: TLection[];
 };

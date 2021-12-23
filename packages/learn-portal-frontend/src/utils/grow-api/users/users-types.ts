@@ -7,5 +7,5 @@ export type TUser = {
   id: string;
   currentProfession: string;
   selectedProfession: string;
-  userGroup: string,
+  userGroup: string;
 };

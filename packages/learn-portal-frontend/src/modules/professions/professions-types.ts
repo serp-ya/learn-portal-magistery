@@ -1,5 +1,5 @@
-import { TProfession } from '../../utils/grow-api/professions';
+import { TProfession } from "../../utils/grow-api/professions";
 
 export type TProfessionsStore = {
-    professions: TProfession[] | null;
+  professions: TProfession[] | null;
 };

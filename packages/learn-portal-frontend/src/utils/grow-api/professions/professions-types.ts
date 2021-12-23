@@ -1,4 +1,4 @@
-import { TSkill } from '../skills';
+import { TSkill } from "../skills";
 
 export type TProfession = {
   id: string;

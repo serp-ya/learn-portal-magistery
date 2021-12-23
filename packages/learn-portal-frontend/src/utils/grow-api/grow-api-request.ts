@@ -10,4 +10,4 @@ export const growApiRequest = <D, R = {}>(
     url: `${REACT_APP_STORE_URL}/${endpoint}`,
     method,
     data: data ? JSON.stringify(data) : undefined,
-  }).then(r => r.data);
+  }).then((r) => r.data);

@@ -1,1 +1,1 @@
-export { ProfessionsList } from './professions-list';
+export { ProfessionsList } from "./professions-list";
