@@ -1,3 +1,3 @@
 export const {
-  STORE_URL,
+  REACT_APP_STORE_URL,
 } = process.env;

@@ -1,13 +1,26 @@
-import * as React from 'react';
-import { EHEaderTypes, Header } from './components/header';
-import { SHOP_NAME } from './constants';
-import styles from './app.module.scss';
+import * as React from "react";
+import { compose } from 'redux';
+import { Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { Header } from "./modules/header";
+import { withProfessions } from './modules/professions';
+import { withUser } from "./modules/user";
+import { MAIN_PAGE_ROUTE, MainPage } from "./pages/main";
 
-export const App = React.memo(() => {
+const AppComponent = React.memo(() => {
   return (
-    <div>
-      <Header className={styles.header} headerType={EHEaderTypes.H1}>{SHOP_NAME}</Header>
-      <p>Hello world</p>
-    </div>
+    <>
+      <Header />
+      <Container style={{ paddingTop: '20px' }}>
+        <Routes>
+          <Route path={MAIN_PAGE_ROUTE} element={<MainPage />} />
+        </Routes>
+      </Container>
+    </>
   );
 });
+
+export const App = compose<React.FC>(
+  withUser,
+  withProfessions,
+)(AppComponent);

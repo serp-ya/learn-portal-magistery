@@ -19,7 +19,7 @@ userRoute.get(`${ROUTES_BASE}`, async (_, res) => {
     const internalUser = await getUsers(externalUser.id); 
     const result = internalUser ? internalUser : await createUser(externalUser.id, externalUser.currentProfession);
     
-    res.json({ user: result });
+    res.json({ ...externalUser, ...result?.toObject() });
   } catch (error) {
     res.status(EStatusCodes.NotFound);
     res.json(error);
