@@ -1,10 +1,8 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
-import cn from "classnames";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, ListGroup } from "react-bootstrap";
 import { getProfessions } from "../professions";
 import { getCurrentUser } from "../user";
-import styles from "./professions-list.module.scss";
 
 export const ProfessionsList = React.memo(() => {
   const professions = useSelector(getProfessions);
@@ -13,19 +11,16 @@ export const ProfessionsList = React.memo(() => {
   return (
     <Container>
       <Row>
-        <ul>
+        <ListGroup>
           {professions?.map(({ id, name }) => (
-            <li
+            <ListGroup.Item
               key={id}
-              className={cn({
-                [styles["current-profession"]]:
-                  currentUser?.currentProfession === id,
-              })}
+              active={currentUser?.currentProfession === id}
             >
               {name}
-            </li>
+            </ListGroup.Item>
           ))}
-        </ul>
+        </ListGroup>
       </Row>
     </Container>
   );

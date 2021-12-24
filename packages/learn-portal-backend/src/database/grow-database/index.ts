@@ -15,7 +15,7 @@ export {
   getUserProgress,
   progressModel,
   updateProgress,
-} from "./collections/progress";
+} from "./collections/progresses";
 export {
   ESkillsFieldNames,
   SkillsModel,

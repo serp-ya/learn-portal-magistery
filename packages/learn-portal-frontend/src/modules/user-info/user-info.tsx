@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, ListGroup } from "react-bootstrap";
 import { getProfessions } from "../professions";
 import { getCurrentUser } from "../user";
 
@@ -18,23 +18,23 @@ export const UserInfo = React.memo(() => {
   return (
     <Container>
       <Row>
-        <ul>
-          <li>
+        <ListGroup>
+          <ListGroup.Item>
             <b>Firstname:</b> {currentUser?.firstName}
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <b>Lastname:</b> {currentUser?.lastName}
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <b>Email:</b> {currentUser?.email}
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <b>Current profession:</b> "{localizedCurrentProfession?.name}"
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <b>Selected profession:</b> "{localizedSelectedProfession?.name}"
-          </li>
-        </ul>
+          </ListGroup.Item>
+        </ListGroup>
       </Row>
     </Container>
   );

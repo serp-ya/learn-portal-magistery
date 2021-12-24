@@ -1,27 +1,23 @@
 import * as React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { ETitleTypes, Title } from "../../components/title";
 import { ProfessionsList } from "../../modules/professions-list";
 import { UserInfo } from "../../modules/user-info";
-import { UserSkills } from "../../modules/user-skills";
 
 export const MainPage = React.memo<{}>(() => {
   return (
     <Container>
       <Row>
-        <Title headerType={ETitleTypes.H1}>Main Page</Title>
-      </Row>
-      <Row>
         <Title headerType={ETitleTypes.H2}>User info</Title>
-        <UserInfo />
+        <Col sm={6}>
+          <UserInfo />
+        </Col>
       </Row>
       <Row>
         <Title headerType={ETitleTypes.H2}>Professions</Title>
-        <ProfessionsList />
-      </Row>
-      <Row>
-        <Title headerType={ETitleTypes.H2}>Your skills</Title>
-        <UserSkills />
+        <Col sm={6}>
+          <ProfessionsList />
+        </Col>
       </Row>
     </Container>
   );

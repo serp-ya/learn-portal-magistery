@@ -1,6 +1,6 @@
 import { getModelForClass, modelOptions, prop, Ref } from '@typegoose/typegoose';
 import { growDBConnection } from '../../grow-database';
-import { ProgressModel } from '../progress';
+import { ProgressModel } from '../progresses';
 import { EUsersFields, USERS_COLLECTION_NAME } from './users-constants';
 
 const usersModelOptions = {

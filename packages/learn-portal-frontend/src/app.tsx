@@ -11,6 +11,11 @@ import {
   SELECTED_SKILL_ID_PARAM_NAME,
   SelectedSkillPage,
 } from "./pages/selected-skill";
+import {
+  SELECTED_LECTION_ID_PARAM_NAME,
+  SELECTED_LECTION_PAGE_ROUTE,
+  SelectedLectionPage,
+} from "./pages/selected-lection";
 import { SKILLS_PAGE_ROUTE, SkillsPage } from "./pages/skills";
 
 const AppComponent = React.memo(() => {
@@ -24,6 +29,10 @@ const AppComponent = React.memo(() => {
           <Route
             path={`${SKILLS_PAGE_ROUTE}/:${SELECTED_SKILL_ID_PARAM_NAME}`}
             element={<SelectedSkillPage />}
+          />
+          <Route
+            path={`${SELECTED_LECTION_PAGE_ROUTE}/:${SELECTED_LECTION_ID_PARAM_NAME}`}
+            element={<SelectedLectionPage />}
           />
         </Routes>
       </Container>

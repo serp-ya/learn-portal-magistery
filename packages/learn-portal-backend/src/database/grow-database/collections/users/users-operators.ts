@@ -1,4 +1,4 @@
-import { EProgressFieldNames, progressModel } from '../progress';
+import { EProgressFieldNames, progressModel } from '../progresses';
 import { EUsersFields } from "./users-constants";
 import { usersModel } from "./users-model";
 

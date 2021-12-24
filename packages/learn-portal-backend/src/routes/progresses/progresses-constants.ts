@@ -1,0 +1,1 @@
+export const PROGRESSES_ROUTE_NAME = 'progresses';

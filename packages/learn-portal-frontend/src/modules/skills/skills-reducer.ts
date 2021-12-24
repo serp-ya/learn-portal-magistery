@@ -12,7 +12,7 @@ export const skillsReducer = (state = INIT_STATE, action): TSkillsStore => {
         ...state,
         skills: Array.isArray(state.skills)
           ? [...state.skills, action.payload]
-          : [],
+          : [action.payload],
       };
     }
     default: {

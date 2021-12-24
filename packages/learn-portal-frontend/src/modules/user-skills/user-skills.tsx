@@ -6,7 +6,11 @@ import { getProfessions } from "../professions";
 import { getCurrentUser } from "../user";
 import { UserSkillsList } from "./user-skills-list";
 
-export const UserSkills = React.memo(() => {
+type TUserSkillsProps = {
+  url?: string;
+};
+
+export const UserSkills = React.memo<TUserSkillsProps>(({ url }) => {
   const currentUser = useSelector(getCurrentUser);
   const professions = useSelector(getProfessions);
 
@@ -19,15 +23,18 @@ export const UserSkills = React.memo(() => {
   }
 
   return (
-    <Container>
-      <Row>
-        <Title headerType={ETitleTypes.H3}>Requirement Skills</Title>
-        <UserSkillsList skillsList={currentProfession?.minimumSkills} />
-      </Row>
-      <Row>
-        <Title headerType={ETitleTypes.H3}>Good to know</Title>
-        <UserSkillsList skillsList={currentProfession?.additionalSkills} />
-      </Row>
-    </Container>
+    <>
+      <Title headerType={ETitleTypes.H3}>Requirement Skills</Title>
+      <UserSkillsList
+        skillsList={currentProfession?.minimumSkills || []}
+        url={url}
+      />
+
+      <Title headerType={ETitleTypes.H3}>Good to know</Title>
+      <UserSkillsList
+        skillsList={currentProfession?.additionalSkills || []}
+        url={url}
+      />
+    </>
   );
 });
