@@ -33,5 +33,6 @@ export {
   createUser,
   deleteUser,
   getUsers,
+  updateUser,
   usersModel,
 } from "./collections/users";

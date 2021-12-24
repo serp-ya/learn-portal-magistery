@@ -15,7 +15,7 @@ export const ProfessionsList = React.memo(() => {
           {professions?.map(({ id, name }) => (
             <ListGroup.Item
               key={id}
-              active={currentUser?.currentProfession === id}
+              active={currentUser?.selectedProfession === id}
             >
               {name}
             </ListGroup.Item>

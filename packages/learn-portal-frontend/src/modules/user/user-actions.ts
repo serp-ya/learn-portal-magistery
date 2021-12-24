@@ -1,4 +1,9 @@
-import { TUser, getCurrentUser } from "../../utils/grow-api/users";
+import {
+  TUser,
+  getCurrentUser,
+  putCurrentUser,
+} from "../../utils/grow-api/users";
+import { getCurrentUser as getCurrentUserSelector } from "./user-selectors";
 
 export const SET_USER = "SET_USER";
 export const setUser = (user: TUser) => ({
@@ -13,3 +18,17 @@ export const fetchUser = () => async (dispatch, getState) => {
     dispatch(setUser(currentUser));
   }
 };
+
+export const updateCurrentUser =
+  (selectedProfession: string) => async (dispatch, getState) => {
+    const state = getState();
+    const currentUser = getCurrentUserSelector(state);
+
+    if (currentUser) {
+      const updatedUser = await putCurrentUser(currentUser, {
+        selectedProfession,
+      });
+
+      dispatch(setUser(updatedUser));
+    }
+  };

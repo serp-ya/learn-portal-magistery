@@ -1,4 +1,4 @@
-export type TUser = {
+export type TExternalUser = {
     id: string;
     firstName: string;
     lastName: string;

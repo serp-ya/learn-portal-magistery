@@ -1,6 +1,6 @@
 export type TProgress = {
   _id: string;
-  finished: string;
+  finished: boolean;
   lectionId: string;
   userId: string;
 };

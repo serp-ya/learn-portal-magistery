@@ -8,18 +8,22 @@ import {
 } from "@/database/grow-database";
 import { EStatusCodes, ROUTES_BASE } from "../routes-constants";
 
+type TProgressesRouteParams = {
+  lectionId?: string;
+  userId: string;
+};
+
+type TProgressesRouteBody = {
+  isFinished?: boolean;
+};
+
 export const progressesRoute = Router();
 
 progressesRoute.get(`${ROUTES_BASE}:userId`, async (req, res) => {
-  const { userId } = req.params;
+  const { userId } = req.params as TProgressesRouteParams;
 
   try {
     const userProgresses = await getUserProgress(userId);
-
-    console.log('#'.repeat(25));
-    console.log('userId', typeof userId, userId);
-    console.log('userProgresses', typeof userProgresses, userProgresses);
-    console.log('#'.repeat(25));
 
     res.statusCode = 200;
     res.json(userProgresses);
@@ -34,6 +38,7 @@ progressesRoute.get(`${ROUTES_BASE}:userId/:lectionId`, async (req, res) => {
 
   try {
     const userProgresses = await getProgress(userId, lectionId);
+
     res.statusCode = 200;
     res.json(userProgresses);
   } catch (error) {
@@ -43,8 +48,8 @@ progressesRoute.get(`${ROUTES_BASE}:userId/:lectionId`, async (req, res) => {
 });
 
 progressesRoute.post(`${ROUTES_BASE}:userId/:lectionId`, async (req, res) => {
-  const { lectionId, userId } = req.params;
-  const { isFinished } = req.body;
+  const { lectionId, userId } = req.params as (TProgressesRouteParams & { lectionId: string });
+  const { isFinished } = req.body as TProgressesRouteBody;
 
   try {
     const userById = await getUsers(userId);
@@ -57,6 +62,7 @@ progressesRoute.post(`${ROUTES_BASE}:userId/:lectionId`, async (req, res) => {
     }
 
     const userProgresses = await updateProgress(userId, lectionId, isFinished);
+
     res.statusCode = 200;
     res.json(userProgresses);
   } catch (error) {

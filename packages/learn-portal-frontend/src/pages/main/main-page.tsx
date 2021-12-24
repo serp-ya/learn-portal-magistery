@@ -2,6 +2,7 @@ import * as React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ETitleTypes, Title } from "../../components/title";
 import { ProfessionsList } from "../../modules/professions-list";
+import { ProfessionsSelect } from "../../modules/professions-select";
 import { UserInfo } from "../../modules/user-info";
 
 export const MainPage = React.memo<{}>(() => {
@@ -17,6 +18,12 @@ export const MainPage = React.memo<{}>(() => {
         <Title headerType={ETitleTypes.H2}>Professions</Title>
         <Col sm={6}>
           <ProfessionsList />
+        </Col>
+      </Row>
+      <Row>
+        <Title headerType={ETitleTypes.H2}>Professions</Title>
+        <Col sm={6}>
+          <ProfessionsSelect />
         </Col>
       </Row>
     </Container>
