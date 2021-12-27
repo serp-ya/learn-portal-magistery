@@ -1,19 +1,8 @@
-import { EProgressFieldNames, progressModel } from "../progresses";
 import { EUsersFields } from "./users-constants";
-import { UserModel, usersModel } from "./users-model";
-
-const populateProgressOptions = {
-  model: progressModel,
-  path: EUsersFields.Progresses,
-  select: [
-    EProgressFieldNames.Finished,
-    EProgressFieldNames.LectionId,
-    EProgressFieldNames.UserId,
-  ],
-};
+import { usersModel } from "./users-model";
 
 export const getUsers = async (userId: string) => {
-  return await usersModel.findById(userId).populate(populateProgressOptions);
+  return await usersModel.findById(userId);
 };
 
 export const createUser = async (userId: string, professionId: string) => {
@@ -21,7 +10,6 @@ export const createUser = async (userId: string, professionId: string) => {
     [EUsersFields.Id]: userId,
     [EUsersFields.CurrentProfession]: professionId,
     [EUsersFields.SelectedProfession]: professionId,
-    [EUsersFields.Progresses]: [],
   });
 
   return usersModel.findById(_id);

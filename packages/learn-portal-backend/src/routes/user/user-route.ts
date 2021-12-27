@@ -7,7 +7,7 @@ export const userRoute = Router();
 
 userRoute.get(ROUTES_BASE, async (_, res) => {
   try {
-    const externalUser = await getUserByEmail(MOCK_USERS_EMAILS.ADMIN);
+    const externalUser = await getUserByEmail(MOCK_USERS_EMAILS.TEST);
 
     if (!externalUser) {
       res.status(EStatusCodes.BadRequest);

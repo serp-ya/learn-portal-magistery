@@ -38,6 +38,15 @@
       "minimumSkills": ["b9c199f3-b003-4a07-9828-7c5b2e7b1821", "fbefe1cf-8fb7-46ad-bf54-87e1e9238605"],
       "additionalSkills": [],
       "depricated": false
+    },
+    {
+      "id": " ",
+      "name": "Архитектор ПО",
+      "description": "Архитектор проектирует архитекутру приложения",
+      "level": "d4",
+      "minimumSkills": ["aea694c7-8eef-41b2-b55f-1c0ea293947e", "82336442-65a8-431d-a942-9b24c60abdd3"],
+      "additionalSkills": ["9c769af0-5d53-4d41-b783-f3f79562fbcb", "2fb4c14f-4068-473b-b541-904aec4ab70f"],
+      "depricated": false
     }
   ]
 }
